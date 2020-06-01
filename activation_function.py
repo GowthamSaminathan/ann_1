@@ -48,5 +48,10 @@ def softmax(x):
     # It gives the probabilities of each class for being output and thus, the sum of softmax values will always equal 1.
     return np.exp(x) / np.exp(x).sum(axis=0)
 
-for x in range(-100,100):
-    print("X {} , VALUE {}".format(x,softmax(x)))
+
+def sigmoid_derivative(z):
+    return np.exp(-z)/((1+np.exp(-z))**2)
+
+if __name__ == "__main__":
+    for x in range(-100,100):
+        print("X {} , VALUE {}".format(x,softmax(x)))
